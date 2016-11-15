@@ -23,6 +23,7 @@ import com.zlebank.zplatform.risk.bean.RiskBean;
 import com.zlebank.zplatform.risk.dao.RiskTradeLogDAO;
 import com.zlebank.zplatform.risk.dao.TxnsLogDAO;
 import com.zlebank.zplatform.risk.enums.RiskLevelEnum;
+import com.zlebank.zplatform.risk.exception.TradeRiskException;
 import com.zlebank.zplatform.risk.pojo.PojoRiskTradeLog;
 import com.zlebank.zplatform.risk.pojo.PojoTxnsLog;
 import com.zlebank.zplatform.risk.service.TradeRiskControlService;
@@ -48,7 +49,7 @@ public class TradeRiskControlServiceImpl implements TradeRiskControlService {
 	 * @param riskBean
 	 */
 	@Override
-	public void RealTimeTradeRiskControl(RiskBean riskBean) {
+	public void realTimeTradeRiskControl(RiskBean riskBean) throws TradeRiskException{
 		// TODO Auto-generated method stub
 		log.info("trade risk control start");
         int riskLevel = 0;
@@ -73,6 +74,7 @@ public class TradeRiskControlServiceImpl implements TradeRiskControlService {
     			} catch (Exception e) {
     				// TODO Auto-generated catch block
     				e.printStackTrace();
+    				throw new TradeRiskException("TR001");
     				//throw new TradeException("T034");
     			}
             }else{
@@ -82,6 +84,7 @@ public class TradeRiskControlServiceImpl implements TradeRiskControlService {
             
         }else{
             //throw new TradeException("T034");
+        	throw new TradeRiskException("TR002");
         }
         if(RiskLevelEnum.PASS==riskLevelEnum){//交易通过
             return;
@@ -116,7 +119,7 @@ public class TradeRiskControlServiceImpl implements TradeRiskControlService {
             riskTradeLogDAO.saveRiskTradeLo(tradeLog);
         }
         if(RiskLevelEnum.REFUSE==riskLevelEnum){//交易拒绝
-            //throw new TradeException("T035");
+            throw new TradeRiskException("TR003");
         }else{
             
         }

@@ -11,6 +11,7 @@
 package com.zlebank.zplatform.risk.service;
 
 import com.zlebank.zplatform.risk.bean.RiskBean;
+import com.zlebank.zplatform.risk.exception.TradeRiskException;
 
 /**
  * 交易风控service
@@ -26,5 +27,5 @@ public interface TradeRiskControlService {
 	 * 实时交易风控
 	 * @param riskBean
 	 */
-	public void RealTimeTradeRiskControl(RiskBean riskBean);
+	public void realTimeTradeRiskControl(RiskBean riskBean) throws TradeRiskException;
 }
