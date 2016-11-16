@@ -17,8 +17,6 @@ import org.hibernate.Criteria;
 import org.hibernate.SQLQuery;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -38,7 +36,7 @@ import com.zlebank.zplatform.risk.pojo.PojoTxnsLog;
 public class TxnsLogDAOImpl extends HibernateBaseDAOImpl<PojoTxnsLog> implements
 		TxnsLogDAO {
 
-	private static final Logger log = LoggerFactory.getLogger(TxnsLogDAOImpl.class);
+	//private static final Logger log = LoggerFactory.getLogger(TxnsLogDAOImpl.class);
 
 	public void saveTxnsLog(PojoTxnsLog txnsLog) {
 		super.saveEntity(txnsLog);
@@ -62,6 +60,7 @@ public class TxnsLogDAOImpl extends HibernateBaseDAOImpl<PojoTxnsLog> implements
 	 * @param cardNo
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	@Transactional(readOnly=true)
 	public Map<String, Object> getCardInfo(String cardNo){

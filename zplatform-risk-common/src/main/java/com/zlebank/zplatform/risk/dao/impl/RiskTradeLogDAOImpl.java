@@ -62,6 +62,7 @@ public class RiskTradeLogDAOImpl extends HibernateBaseDAOImpl<PojoRiskTradeLog> 
 		}
 		return query.list();
 	}
+	@SuppressWarnings("unchecked")
 	@Override
 	@Transactional(readOnly=true)
     public List<Map<String,String>> getRiskStrategy(int orders){

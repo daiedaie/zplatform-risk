@@ -13,8 +13,6 @@ package com.zlebank.zplatform.risk.dao;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.transaction.annotation.Transactional;
-
 import com.zlebank.zplatform.risk.bean.RiskBean;
 import com.zlebank.zplatform.risk.common.dao.BaseDAO;
 import com.zlebank.zplatform.risk.pojo.PojoRiskTradeLog;
