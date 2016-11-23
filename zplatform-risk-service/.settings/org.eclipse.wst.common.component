@@ -4,6 +4,9 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="zplatform-risk-provider-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/zplatform-risk-provider/zplatform-risk-provider">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="zplatform-risk-common-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/zplatform-risk-common/zplatform-risk-common">
             <dependency-type>uses</dependency-type>
         </dependent-module>

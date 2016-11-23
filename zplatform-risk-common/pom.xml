@@ -9,7 +9,7 @@
 	</parent>
 	<artifactId>zplatform-risk-common</artifactId>
 	<packaging>jar</packaging>
-	<name>zplatform-task-common</name>
+	<name>zplatform-risk-common</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
