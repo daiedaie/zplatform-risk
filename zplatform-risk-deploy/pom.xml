@@ -299,5 +299,6 @@
 		<module>../zplatform-risk-common</module>
 		<module>../zplatform-risk-provider</module>
 		<module>../zplatform-risk-service</module>
+		<module>../zplatform-risk-simple</module>
 	</modules>
 </project>
